@@ -2,6 +2,7 @@
 SQL SErver Blocked Process Report Viewer
 
 *Purpose*
+
 SQL Server's tracing tools generate blocked process reports to give more information about potential concurrency problems on a database server. But they are difficult to read. SQL Server Blocked Process Report Viewer organizes and presents this information in a useful way.
 
 *Syntax*
@@ -9,6 +10,7 @@ SQL Server's tracing tools generate blocked process reports to give more informa
 `sp_blocked_process_report_viewer [@Source = ] 'SourceOfTraceOrSessionTarget' [ , [ @Type = ] 'BPRFormat' ]`
 
 *Arguments*
+
 `[@Trace = ] 'SourceOfTraceOrSessionTarget'`
 
 If the blocked process reports you'd like to examine came from a trace file, then this parameter specifies the name of the trace table or trace file that holds the blocked process reports. 
