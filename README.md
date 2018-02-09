@@ -1,5 +1,5 @@
 # sqlblockedprocesses
-SQL SErver Blocked Process Report Viewer
+SQL Server Blocked Process Report Viewer
 
 *Purpose*
 
@@ -11,7 +11,7 @@ SQL Server's tracing tools generate blocked process reports to give more informa
 
 *Arguments*
 
-`[@Trace = ] 'SourceOfTraceOrSessionTarget'`
+`[@Source = ] 'SourceOfTraceOrSessionTarget'`
 
 If the blocked process reports you'd like to examine came from a trace file, then this parameter specifies the name of the trace table or trace file that holds the blocked process reports. 
 
