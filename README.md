@@ -1,5 +1,12 @@
 # sqlblockedprocesses
-SQL Server Blocked Process Report Viewer
+
+**SQL Server Blocked Process Report Viewer**
+
+
+*Instructions*
+
+Download procedure from here: [sp_blocked_process_report_viewer.sql](https://raw.githubusercontent.com/mjswart/sqlblockedprocesses/master/sp_blocked_process_report_viewer.sql) 
+This script will install the procedure on your server.
 
 *Purpose*
 
