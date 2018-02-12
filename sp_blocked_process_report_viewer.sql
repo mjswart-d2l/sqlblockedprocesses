@@ -20,7 +20,7 @@ SET NOCOUNT ON
 
 -- Validate @Type
 IF (@Type NOT IN ('FILE', 'TABLE', 'XMLFILE', 'XESESSION'))
-	RAISERROR ('The @Type parameter must be ''FILE'', ''TABLE'' or ''XMLFILE''', 11, 1)
+	RAISERROR ('The @Type parameter must be ''FILE'', ''TABLE'', ''XESESSION'' or ''XMLFILE''', 11, 1)
 
 IF (@Source LIKE '%.trc' AND @Type <> 'FILE')
 	RAISERROR ('Warning: You specified a .trc trace. You should also specify @Type = ''FILE''', 10, 1)
@@ -105,10 +105,10 @@ END
 
 IF (@Type = 'XESESSION')
 BEGIN
-	DECLARE @SessionType sysname;
+	DECLARE @SessionType nvarchar(max);
 	DECLARE @SessionId int;
 	DECLARE @SessionTargetId int;
-	DECLARE @FilenamePattern sysname;
+	DECLARE @FilenamePattern nvarchar(max);
 
 	SELECT TOP ( 1 ) 
 		@SessionType = est.name,
@@ -123,7 +123,7 @@ BEGIN
 	IF (@SessionType = 'event_file')
 	BEGIN
 		 
-		SELECT @filenamePattern = REPLACE( CAST([value] AS sysname), '.xel', '*xel' )
+		SELECT @filenamePattern = REPLACE( CAST([value] AS nvarchar(max)), '.xel', '*xel' )
 		FROM sys.server_event_session_fields
 		WHERE event_session_id = @SessionId
 		  AND [object_id] = @SessionTargetId
